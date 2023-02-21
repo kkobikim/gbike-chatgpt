@@ -4,7 +4,7 @@ import rehypeHighlight from "rehype-highlight";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { motion } from "framer-motion";
 
-const Chat = ({ message, user }: { message: string; user: "me" | "gpt" }) => {
+const Chat = ({ message, user }: { message: string; user: "me" | "gcoo" }) => {
   const chatStringIndex = useRef(0);
   const [gptMessage, setGptMessage] = useState("");
 
@@ -23,7 +23,7 @@ const Chat = ({ message, user }: { message: string; user: "me" | "gpt" }) => {
   return (
     <motion.div
       style={{
-        alignSelf: user === "gpt" ? "flex-start" : "flex-end",
+        alignSelf: user === "gcoo" ? "flex-start" : "flex-end",
         width: "auto",
         maxWidth: "90%",
       }}
@@ -34,9 +34,9 @@ const Chat = ({ message, user }: { message: string; user: "me" | "gpt" }) => {
       animate={{ opacity: 1, translateY: 0, transition: { duration: 0.3 } }}
       exit={{ opacity: 0, translateY: 0 }}
     >
-      <Flex gap="5px" w="full" flexDir={user === "gpt" ? "row" : "row-reverse"}>
+      <Flex gap="5px" w="full" flexDir={user === "gcoo" ? "row" : "row-reverse"}>
         <Avatar
-          name={user === "me" ? "Me" : "GPT"}
+          name={user === "me" ? "Me" : "gcoo"}
           size="sm"
           bg="border-color"
           mt="-6px"
@@ -47,11 +47,11 @@ const Chat = ({ message, user }: { message: string; user: "me" | "gpt" }) => {
           bg="main-bg"
           p="0.5rem 1rem"
           w="auto"
-          rounded={user === "gpt" ? "0 20px 20px 20px" : "20px 0 20px 20px"}
+          rounded={user === "gcoo" ? "0 20px 20px 20px" : "20px 0 20px 20px"}
           fontSize="18px"
           flexDir="column"
         >
-          {user === "gpt" && (
+          {user === "gcoo" && (
             <Flex
               alignSelf="flex-end"
               fontStyle="italic"
@@ -60,7 +60,7 @@ const Chat = ({ message, user }: { message: string; user: "me" | "gpt" }) => {
               as="small"
               fontWeight={500}
             >
-              GPT
+              gcoo
             </Flex>
           )}
           {user === "me" && (
@@ -76,7 +76,7 @@ const Chat = ({ message, user }: { message: string; user: "me" | "gpt" }) => {
             </Flex>
           )}
           <ReactMarkdown rehypePlugins={[rehypeHighlight]}>
-            {user === "gpt" ? gptMessage || "" : message || ""}
+            {user === "gcoo" ? gptMessage || "" : message || ""}
           </ReactMarkdown>
         </Flex>
       </Flex>

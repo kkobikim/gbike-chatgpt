@@ -9,7 +9,7 @@ import Chat from "../src/components/Chat";
 import InputField from "../src/components/InputField";
 
 type Chat = {
-  user: "me" | "gpt";
+  user: "me" | "gcoo";
   message: string;
   originalIndex: number;
 };
@@ -51,7 +51,7 @@ const Home: NextPage = () => {
         );
       }
       setChats((prev) => [
-        { user: "gpt", message: data.result, originalIndex: prev.length },
+        { user: "gcoo", message: data.result, originalIndex: prev.length },
         ...prev,
       ]);
     } catch (error) {
