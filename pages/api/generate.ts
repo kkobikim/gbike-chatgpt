@@ -28,7 +28,6 @@ export default async function handler(
       prompt: message,
       temperature: 0.9,
       max_tokens: 500,
-      stop: ["\n"],
     });
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch (error: any) {
