@@ -19,7 +19,7 @@ export default async function handler(
     });
     return;
   }
-
+ 
   const message = req.body.message;
 
   try {
