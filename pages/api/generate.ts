@@ -14,7 +14,7 @@ export default async function handler(
     res.status(500).json({
       error: {
         message:
-          "OpenAI API key not configured, please follow instructions in README.md",
+          "지쿠AI봇에 오류가 발생했어요.",
       },
     });
     return;
